@@ -11,9 +11,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     .digest("base64");
 
   res.status(200).json({
-    match: hash === req.headers["x-api-signature-sha256"],
-    hash,
+    hashMatch: hash === req.headers["x-api-signature-sha256"],
     body: req.body,
-    headers: req.headers,
   });
 }
