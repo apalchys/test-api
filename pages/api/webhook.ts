@@ -15,5 +15,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     body: req.body,
   };
   console.log(response);
-  res.status(200).json(response);
+  res.status(400).json(response);
 }
